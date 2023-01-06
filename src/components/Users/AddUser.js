@@ -12,7 +12,10 @@ const AddUser = (props) => {
   const addUserHandler = (event) => {
     event.preventDefault();
 
-    if (enteredUsername.trim().length === 0 || enteredUsername.trim().length === 0) {
+    if (
+      enteredUsername.trim().length === 0 ||
+      enteredUsername.trim().length === 0
+    ) {
       return;
     }
 
@@ -20,8 +23,7 @@ const AddUser = (props) => {
       return;
     }
 
-    props.addUserToUserList(enteredUsername, enteredAge)
-
+    props.onAddUser(enteredUsername, enteredAge);
     setEnteredUsername("");
     setEnteredAge("");
   };

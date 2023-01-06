@@ -1,22 +1,24 @@
 import React from "react";
 
-import User from './User'
+import Card from "../UI/Card";
+
+import classes from "./UsersList.module.css";
 
 const UsersList = (props) => {
-
-    console.log(props);
-
-
   if (props.users.length === 0) {
     return <h2>Found no users.</h2>;
   }
 
   return (
-    <ul>
-      {props.users.map((user) => (
-        <User key={user.id} name={user.name} age={user.age} />
-      ))}
-    </ul>
+    <Card className={classes.users}>
+      <ul>
+        {props.users.map((user) => (
+          <li key={user.id}>
+            {user.name} ({user.age} years old)
+          </li>
+        ))}
+      </ul>
+    </Card>
   );
 };
 
