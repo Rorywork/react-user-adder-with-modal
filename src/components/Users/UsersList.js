@@ -6,7 +6,7 @@ import classes from "./UsersList.module.css";
 
 const UsersList = (props) => {
   if (props.users.length === 0) {
-    return <h2>Found no users.</h2>;
+    return;
   }
 
   return (
